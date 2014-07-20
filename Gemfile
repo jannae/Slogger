@@ -7,6 +7,7 @@ gem 'json'
 gem 'levenshtein'
 
 gem 'nokogiri'
+gem 'fitgem'
 
 group :test do
   gem 'rake'

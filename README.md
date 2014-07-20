@@ -14,7 +14,7 @@ Slogger indexes various public social services and creates Day One (<http://dayo
 - Slogger 2.x uses a plugin architecture to allow easy extension
     - Default plugins:
         -  Github
-            -  new plugin, supercedes Gist logger. 
+            -  new plugin, supersedes Gist logger. 
             -  Logs push, watch and gist activity
         -  Flickr
             - images uploaded in the last 24 hours, each as an individual post
@@ -66,7 +66,7 @@ Slogger indexes various public social services and creates Day One (<http://dayo
         
         sudo gem install bundler
         bundle install 
-3. Default plugins are stored in `/plugins/`, additional plugins are usually found in `/plugins_disabled/`. Plugins are enabled and disabled by adding/removing them from the `/plugins/` folder. Move any additional plugins you want to use into `/plugins/` and disable any other plugins by moving them from `/plugins/` to `plugins_disabled`. (Plugins that are found in `plugins` but not configured will not break anything, but you'll see warnings when run.)
+3. Default plugins are stored in `/plugins/`, additional plugins are usually found in `/plugins_disabled/`. Plugins are enabled and disabled by adding/removing them from the `/plugins/` folder. Move any additional plugins you want to use into `/plugins/` and disable any other plugins by moving them from `/plugins/` to `/plugins_disabled/`. (Plugins that are found in `plugins` but not configured will not break anything, but you'll see warnings when run.)
 4. From within the Slogger folder, run `./slogger --update-config` to create the initial configuration file. If this doesn't work, you may need to make the file executable: `chmod a+x slogger` from within the Slogger folder. Note that any time you add new plugins or update existing ones, you'll want to run `./slogger --update-config` to ensure that your available options are up to date.
 5. Edit the file `slogger_config` that shows up in your Slogger folder
     - The required options will be 'storage:', 'image_filename_is_title:', 'date_format:' and 'time_format:'
@@ -80,6 +80,16 @@ Slogger indexes various public social services and creates Day One (<http://dayo
 6. Edit additional configuration options for any plugins defined. The config file is formatted as YAML, and your options need to conform to that syntax. For the most part, you can just maintain the formatting (quotes, dashes, brackets, etc.) of the default settings when updating.
     - **Note:** Some plugins have options that will be filled in automatically. For example, the Twitter plugin requires you to log in on the command line and enter a PIN, after which it completes the authorization and saves your token to the configuration. If you install a plugin which requires oAuth, be sure to run Slogger from the command line with "./slogger -o plugin_name" once to complete the login procedure and save your credentials.
 7. Next time you run `./slogger`, it will execute the enabled and configured plugins and generate your journal entries. 
+
+## Plugins ##
+### Enabled by Default
+* App.net logger
+* Twitterlogger: ./slogger -o twitterlogger.rb
+* Fitbit: ./slogger -o fitbit.rb
+
+
+### Disabled by Default
+
 
 ## Usage ##
 
